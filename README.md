@@ -20,6 +20,13 @@ Provision database
 ```shell
 bin/magento setup:install --base-url=http://localhost --db-host=192.168.1.82 --db-name=<dbschema> --db-user=<dbuser> --db-password=<dbpass> --admin-firstname=admin --admin-lastname=admin --admin-email=admin@admin.com --admin-user=admin --admin-password=admin123 --language=es_ES --currency=EUR --timezone=Europe/Madrid --use-rewrites=1
 ```
+
+```shell
+docker exec -it -u www-data my-magento-shop bash
+
+bin/magento setup:install --base-url=http://localhost --db-host=192.168.1.82 --db-name=magento --db-user=magento --db-password=magento --admin-firstname=admin --admin-lastname=admin --admin-email=admin@admin.com --admin-user=admin --admin-password=admin123 --language=es_ES --currency=EUR --timezone=Europe/Madrid --use-rewrites=1 --elasticsearch-host 192.168.1.82
+```
+
 If MariaDB version is more modern than Magento "supported" one:
 
 ```shell
